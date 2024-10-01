@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
@@ -9,37 +10,60 @@ import { Button } from "../../components/Button";
 
 import { Container, Form } from "./styles";
 
-export function New() {
-return (
-    <Container>
-    <Header />
+export function New() {   
+    const [links, setLinks] = useState([]);
+    const [newLink, setNewLink] = useState("");
 
-    <main>
+    function handleAddLink(){
+      setLinks(prevState => [...prevState, newLink]);
+      setNewLink("");
+  }s
+
+  return (
+    <Container>
+      <Header />
+
+      <main>
         <Form>
-        <header>
+          <header>
             <h1>Criar nota</h1>
             <Link to="/">voltar</Link>
-        </header>
+          </header>
 
-        <Input placeholder="Título" />
-        <TextArea placeholder="Observações" />
+          <Input placeholder="Título" />
+          <TextArea placeholder="Observações" />
 
-        <Section title="Links úteis">
-            <NoteItem value="https://github.com/tallesguerra" />
-            <NoteItem isNew placeholder="Novo link" />
-        </Section>
+          <Section title="Links úteis">
+            {
+              links.map((link, index) =>(
+                <NoteItem
+                  key={String(index)}
+                  value={link}                 
+                  onClick={() => { }}
+                />    
+              ))
+            }
 
-        <Section title="Marcadores">
+            <NoteItem
+              isNew
+              placeholder="Novo link"
+              value={newLink}
+              onChange={e => setNewLink(e.target.value)}
+              onClick={handleAddLink}
+            />     
+          
+          </Section>
+
+          <Section title="Marcadores">
             <div className="tags">
-                <NoteItem value="React" />
-                <NoteItem isNew placeholder="Novo tag"/>
+              <NoteItem value="React" />
+              <NoteItem isNew placeholder="Novo tag" />
             </div>
-        </Section>
+          </Section>
 
-            <Button title="Salvar" />
-
+          <Button title="Salvar" />
         </Form>
-    </main>
+      </main>
     </Container>
-);
+  );
 }
