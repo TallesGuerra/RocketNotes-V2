@@ -10,14 +10,19 @@ import { Button } from "../../components/Button";
 
 import { Container, Form } from "./styles";
 
-export function New() {   
-    const [links, setLinks] = useState([]);
-    const [newLink, setNewLink] = useState("");
+export function New() {
+  const [links, setLinks] = useState([]);
+  const [newLink, setNewLink] = useState("");
 
-    function handleAddLink(){
-      setLinks(prevState => [...prevState, newLink]);
-      setNewLink("");
-  }s
+  function handleAddLink() {
+    setLinks(prevState => [...prevState, newLink]);
+    setNewLink("");
+  }
+
+  function handleRemoveLink(deleted){
+    setLinks(prevState => prevState.filter(link => link !== deleted));
+  }
+
 
   return (
     <Container>
@@ -35,12 +40,12 @@ export function New() {
 
           <Section title="Links úteis">
             {
-              links.map((link, index) =>(
+              links.map((link, index) => (
                 <NoteItem
                   key={String(index)}
-                  value={link}                 
-                  onClick={() => { }}
-                />    
+                  value={link}
+                  onClick={() => handleRemoveLink(link)}
+                />
               ))
             }
 
@@ -50,8 +55,8 @@ export function New() {
               value={newLink}
               onChange={e => setNewLink(e.target.value)}
               onClick={handleAddLink}
-            />     
-          
+            />
+
           </Section>
 
           <Section title="Marcadores">
