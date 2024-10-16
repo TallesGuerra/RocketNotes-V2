@@ -14,12 +14,20 @@ export const Container = styled.div`
         align-items: center;
 
         padding: 0 12.4rem;
+
+        svg{
+            font-size: 24px;
+            color: ${({theme}) => theme.COLORS.GRAY_100};;
+        }
+
+        button{
+            background: none;
+            border: none;
+        }
     }
 
-    svg{
-        font-size: 24px;
-        color: ${({theme}) => theme.COLORS.GRAY_100};;
-    }
+
+
 `;
 
 export const Form = styled.form`
