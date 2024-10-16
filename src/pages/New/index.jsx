@@ -104,7 +104,7 @@ export function New() {
           <Section title="Links úteis">
             <NoteItem
               isNew
-              placeholder="Novo link"
+              placeholder="Novo Link (INCLUIR o https://)"
               value={newLink}
               onChange={e => setNewLink(e.target.value)}
               onClick={handleAddLink}
@@ -126,7 +126,7 @@ export function New() {
             <div className="tags">
               <NoteItem
                 isNew
-                placeholder="Novo tag"
+                placeholder="Nova tag"
                 value={newTag}
                 onChange={e => setNewTag(e.target.value)}
                 onClick={handleAddTag}
