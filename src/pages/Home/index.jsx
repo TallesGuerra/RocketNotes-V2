@@ -80,7 +80,8 @@ export function Home() {
           tags && tags.map(tag => (
             <li key={String(tag.id)}>
               <ButtonText
-                title={tag.name/* .charAt(0).toUpperCase() + tag.name.slice(1); */}
+                title={tag.name.charAt(0).toUpperCase()+tag.name.slice(1)}  
+
                 onClick={() => handleTagSelected(tag.name)}
                 $isactive={tagsSelected.includes(tag.name)}
 
