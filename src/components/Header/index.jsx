@@ -1,27 +1,27 @@
 /* eslint-disable react/jsx-no-undef */
 
+import { useNavigate } from "react-router-dom";
 import { RiShutDownLine } from "react-icons/ri";
 import { useAuth } from "../../hooks/auth";
 
 import { api } from "../../services/api";
 
-import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 import { Container, Profile, Logout } from "./styles";
 
 export function Header() {
   const { signOut, user } = useAuth();
+  const navigate = useNavigate();
 
-
- const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
 
   return (
     <Container>
       <Profile to="/profile">
-        <img
-          src={avatarUrl}
-          alt={user.name}
-        />
+        <img src={avatarUrl} alt={user.name} />
 
         <div>
           <span>Bem-Vindo</span>
@@ -29,9 +29,13 @@ export function Header() {
         </div>
       </Profile>
 
-      <Logout onClick={signOut}>
+      <Logout
+        onClick={() => {
+          signOut(), navigate("/");
+        }}
+      >
         <RiShutDownLine />
-      </Logout >
+      </Logout>
     </Container>
   );
 }
