@@ -15,8 +15,8 @@ function AuthProvider({ children }) {
             localStorage.setItem("@rocketnotes:token", token);
 
             api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
             setData({ user, token });
+
         } catch (error) {
             if (error.response) {
                 alert(error.response.data.message);
@@ -41,14 +41,14 @@ function AuthProvider({ children }) {
 
                 const response = await api.patch("/users/avatar", fileUploadForm);
                 user.avatar = response.data.avatar;
-            }
-        
+            }        
         
             await api.put("/users", user);
+
             localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
 
             setData({ user, token: data.token });
-
+           
             alert("Perfil atualizado!");
         } catch (error) {
             if (error.response) {

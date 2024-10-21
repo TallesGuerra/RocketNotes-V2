@@ -12,7 +12,7 @@ import { Section } from "../../components/Section";
 import { ButtonText } from "../../components/ButtonText";
 
 export function Details() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState('');
 
   const params = useParams();
   const navigate = useNavigate();
@@ -30,17 +30,17 @@ export function Details() {
     }
   }
 
+   useEffect(() => {
 
-
-  useEffect(() => {
-    async function fetchNote() {
-      const response = await api.get(`/notes/${params.id}`);
-      setData(response.data);
-      
+    async function fetchNote(){
+      const response = await api.get(`/notes/${params.id}`)
+      setData(response.data)
     }
 
     fetchNote();
-  }, []);
+
+  }, [])
+
 
   return (
     <Container>
@@ -48,7 +48,7 @@ export function Details() {
 
       {data && (
         <main>
-          <Content>
+          <Content> 
             <ButtonText 
               title="Excluir nota" 
               onClick={handleRemove}
@@ -63,7 +63,7 @@ export function Details() {
               <Section title="Links úteis">
                 <Links>
                   {
-                    data.links.map((link) => (
+                    data.links.map(link => (
                     <li key={String(link.id)}>
                         <a href={link.url} target="_blank">
                           {link.url}
@@ -78,8 +78,8 @@ export function Details() {
             {
               data.tags &&
               <Section title="Marcadores">
-                {data.tags.map((tag) => (
 
+                {data.tags.map(tag => (
                   <Tag
                     key={String(tag.id)}
                     title={tag.name}
@@ -92,8 +92,8 @@ export function Details() {
             }
 
             <Button 
-              onClick={handleBack}
               title="Voltar" 
+              onClick={handleBack}
             />
           </Content>
         </main>

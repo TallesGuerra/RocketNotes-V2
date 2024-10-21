@@ -23,12 +23,9 @@ export const Container = styled.div`
         button{
             background: none;
             border: none;
+
         }
-    }
-
-
-
-`;
+    }`;
 
 export const Form = styled.form`
     max-width: 34.0rem;
@@ -36,6 +33,10 @@ export const Form = styled.form`
 
     > div:nth-child(4){
         margin-top: 2.4rem;
+    }
+
+    button{       
+        opacity: 0.8;        
     }
 
 `;

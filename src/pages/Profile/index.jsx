@@ -12,8 +12,6 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
 
-
-
 import { Container, Form, Avatar } from "./styles";
 
 export function Profile() {
@@ -32,19 +30,26 @@ export function Profile() {
     const navigate = useNavigate();
 
     function handleBack(){
-        navigate(-1);
+        navigate("/");
       }
 
-    async function handleUpdate() {
-        const user = {
+
+
+   async function handleUpdate() {
+        const updated = {
             name,
             email,
             password: passwordNew,
             old_password: passwordOld,
         };
 
-        await updateProfile({ user, avatarFile });
+        const userUpdated = Object.assign(user, updated)      
+
+        await updateProfile({ user: userUpdated, avatarFile });
+
     }
+
+   
 
     function handleChangeAvatar(event){
         const file = event.target.files[0];
