@@ -22,20 +22,25 @@ export function Profile() {
     const [passwordOld, setPasswordOld] = useState();
     const [passwordNew, setPasswordNew] = useState();
 
-    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}`: avatarPlaceholder;
-    
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
     const [avatar, setAvatar] = useState(avatarUrl);
     const [avatarFile, setAvatarFile] = useState(null);
 
     const navigate = useNavigate();
 
-    function handleBack(){
+    function handleBack() {
         navigate("/");
-      }
+    }
 
 
 
-   async function handleUpdate() {
+    async function handleUpdate() {
+        if (passwordOld && !passwordNew) {
+            alert("Insira uma nova senha!");
+            return;
+        }
+
         const updated = {
             name,
             email,
@@ -43,20 +48,18 @@ export function Profile() {
             old_password: passwordOld,
         };
 
-        const userUpdated = Object.assign(user, updated)      
-
+        const userUpdated = Object.assign(user, updated)
         await updateProfile({ user: userUpdated, avatarFile });
-
     }
 
-   
 
-    function handleChangeAvatar(event){
+
+    function handleChangeAvatar(event) {
         const file = event.target.files[0];
         setAvatarFile(file);
 
         const imagePreview = URL.createObjectURL(file);
-        setAvatar(imagePreview);    
+        setAvatar(imagePreview);
     }
 
     return (
@@ -77,10 +80,10 @@ export function Profile() {
                     <label htmlFor="avatar">
                         <FiCamera />
 
-                        <input 
-                            id="avatar" 
-                            type="file" 
-                            onChange={handleChangeAvatar} 
+                        <input
+                            id="avatar"
+                            type="file"
+                            onChange={handleChangeAvatar}
                         />
                     </label>
                 </Avatar>

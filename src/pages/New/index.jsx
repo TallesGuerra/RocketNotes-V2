@@ -49,13 +49,21 @@ export function New() {
       return alert("Digite o título da nota");
     }
 
-    if (newLink) {
+    if (!newLink && links.length === 0) {
+      return alert("Digite um link para nota.")
+    };
+
+    if (newLink) {      
       return alert(
         "Você deixou um link no campo para adicionar, mas não finalizou. Clique para adicionar ou deixe o campo vazio."
       );
     }
 
-    if (newTag) {
+    if (!newTag && tags.length === 0) {
+      return alert("Digite uma tag para nota.")
+    };
+
+    if (newTag) {      
       return alert(
         "Você deixou uma tag no campo para adicionar, mas não finalizou. Clique para adicionar ou deixe o campo vazio."
       );
