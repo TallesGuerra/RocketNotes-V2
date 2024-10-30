@@ -8,7 +8,7 @@ export const Container = styled.div`
         width: 100%;
         height: 14.4rem;
 
-        background: ${({theme}) => theme.COLORS.BACKGROUND_900};
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
         display: flex;
         align-items: center;
@@ -16,8 +16,8 @@ export const Container = styled.div`
         padding: 0 12.4rem;
 
         svg{
-            font-size: 24px;
-            color: ${({theme}) => theme.COLORS.GRAY_100};;
+            width: 2.4rem;
+            color: ${({ theme }) => theme.COLORS.GRAY_100};
         }
 
         button{
@@ -25,6 +25,17 @@ export const Container = styled.div`
             border: none;
 
         }
+        
+        @media(max-width:660px) {            
+            padding: 0 3.5rem; 
+            height: 12.4rem;      
+
+            svg{
+                width: 1.8rem;           
+
+            }         
+        
+    }
     }`;
 
 export const Form = styled.form`
@@ -37,6 +48,10 @@ export const Form = styled.form`
 
     button{       
         opacity: 0.8;        
+    }
+
+    @media(max-width: 660px){
+        padding: 0 2rem;       
     }
 
 `;
@@ -60,7 +75,7 @@ export const Avatar = styled.div`
     width: 4.8rem;
     height: 4.8rem;
 
-    background-color: ${({theme}) => theme.COLORS.ORANGE};
+    background-color: ${({ theme }) => theme.COLORS.ORANGE};
     border-radius: 50%;
     
     display: flex;
@@ -82,7 +97,25 @@ export const Avatar = styled.div`
         width: 2.0rem;
         height: 2.0rem;
 
-        color: ${({theme}) => theme.COLORS.BACKGROUND_800};
+        color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    }
+}
+
+@media(max-width: 660px){    
+    
+
+    img{
+height: 15.6rem;
+width: 15.6rem;
+
+}
+
+> label {
+position: absolute;
+bottom: 2.3rem;
+right: 2.3rem;
+
+       
     }
 }
 `;

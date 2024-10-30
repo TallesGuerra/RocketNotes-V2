@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     
     display: grid;
@@ -16,6 +16,8 @@ export const Container = styled.div`
     "newNote content";
 
     background-color: ${({ theme }) => theme.BACKGROUND_800};
+
+    
 
 `;
 
@@ -51,6 +53,8 @@ export const Menu = styled.ul`
         margin-bottom: 2.4rem;       
         
     }
+
+    
      
 `;
 
@@ -85,3 +89,4 @@ export const NewNote = styled(Link)`
         margin: 0.8rem;
     }
 `;
+

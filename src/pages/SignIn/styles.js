@@ -3,9 +3,17 @@ import backgroundImg from '../../assets/background.png';
 
 export const Container = styled.div`
     height: 100vh;
+    width: 100%;
 
     display: flex;
-    align-items: stretch;
+    align-items: stretch;  
+
+    @media(max-width:660px) {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
 
 `;
 
@@ -43,6 +51,10 @@ export const Form = styled.form`
         margin-top: 12.4rem;
     }
 
+    @media(max-width: 660px){
+        padding: 0 2rem;
+    }
+
 `;
 
 export const Background = styled.div`
@@ -51,4 +63,9 @@ export const Background = styled.div`
     background-size: cover;
 
     opacity: 0.7;
+
+    @media (max-width:660px) {
+        display: none;
+    }
+    
 `;
