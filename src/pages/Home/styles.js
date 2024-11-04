@@ -17,8 +17,38 @@ export const Container = styled.div`
 
     background-color: ${({ theme }) => theme.BACKGROUND_800};
 
+    @media(max-width:660px) {  
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
     
+   
+    
+    > header{
+            padding: 1.5rem;
 
+            div span,
+            div strong
+            {
+                font-size: 1.5rem;
+            }    
+
+            > button svg{
+            font-size: 2.5rem;
+            }
+
+   
+    }
+
+    ul{
+        padding: 1rem;        
+        list-style-type: none;      
+   
+        
+    }
+
+    }
+    
 `;
 
 export const Brand = styled.ul`
@@ -62,13 +92,26 @@ export const Search = styled.div`
      grid-area: search;
      padding:6.4rem 6.4rem 0;
      
+
+     @media(max-width:660px){
+        padding:  1.5rem;     
+     }
+     
 `;
 
 export const Content = styled.div`
      grid-area: content;
      padding: 0 6.4rem;     
 
-     overflow-y: auto;
+    
+
+     @media(max-width:660px){    
+        padding: 0 1.5rem;    
+        overflow-y: none;      
+
+        margin: 0;      
+       
+     }
      
      ;
 `;
@@ -83,10 +126,14 @@ export const NewNote = styled(Link)`
 
      display: flex;
      align-items: center;
-     justify-content: center;
+     justify-content: center;  
     
     > svg {
         margin: 0.8rem;
     }
+
+    @media(max-width:660px){    
+        margin-bottom: 4.0rem;  
+     }
 `;
 

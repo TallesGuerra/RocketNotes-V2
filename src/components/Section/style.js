@@ -10,10 +10,11 @@ export const Container = styled.section`
         margin-bottom: 2.8rem;
 
         counter-reset: ${({ theme }) => theme.COLORS.GRAY_100};
-        font-size: 2.0rem;
-        font-weight: 400;
+        font-size: 2rem;
+        font-weight: 400;    
+
+    }
 
     
 
-    }
 `;

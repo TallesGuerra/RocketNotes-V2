@@ -29,6 +29,13 @@ export const Container = styled.button`
        
     }
 
+    @media(max-width:660px){
+        h1{
+            font-size: 1.5rem;
+        }
+       
+    }
+
     
 
 `
