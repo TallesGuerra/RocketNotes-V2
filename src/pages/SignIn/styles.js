@@ -15,6 +15,8 @@ export const Container = styled.div`
     flex-direction: column;
     }
 
+    
+
 `;
 
 export const Form = styled.form`
@@ -51,8 +53,14 @@ export const Form = styled.form`
         margin-top: 12.4rem;
     }
 
+
+
     @media(max-width: 660px){
         padding: 0 2rem;
+        
+        a {
+            margin-top: 5.4rem;  
+        }
     }
 
 `;

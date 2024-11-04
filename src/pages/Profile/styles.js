@@ -102,8 +102,6 @@ export const Avatar = styled.div`
 }
 
 @media(max-width: 660px){    
-    
-
     img{
 height: 15.6rem;
 width: 15.6rem;

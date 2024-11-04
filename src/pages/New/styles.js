@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
 
     display: grid;
     grid-template-rows: 10.5rem auto;
     grid-template-areas:
     "header"
     "content";
+
 
     > main {
         grid: content;
@@ -21,6 +22,35 @@ export const Container = styled.div`
         flex-wrap: wrap;       
     }
   
+    @media(max-width:660px) {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+     
+    
+        > header{
+            padding: 0.5rem;
+        
+            div span,
+            div strong
+            {
+                font-size: 1.5rem;
+            }    
+
+            > button svg{
+         font-size: 2.5rem;
+
+            }
+            
+            
+           
+        }
+        
+    }
+    
+    
+   
+   
 `;
 
 
@@ -33,11 +63,25 @@ export const Form = styled.form`
     align-items: center;
     justify-content: space-between;
 
-    margin-bottom: 3.6rem;
+    margin-bottom: .6rem;
+   
 
     button{
         font-size: 2.0rem;
-        color: ${({theme}) => theme.COLORS.GRAY_100}
+        color: ${({ theme }) => theme.COLORS.GRAY_100}
     }
+
+    @media(max-width: 660px){
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        
+       
+        button{
+            font-size: 1.5rem;
+            
+        }
+      
+    }
+
 }
 `;

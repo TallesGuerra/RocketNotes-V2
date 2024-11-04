@@ -53,6 +53,10 @@ export const Form = styled.form`
 
     @media(max-width: 660px){
         padding: 0 2rem;
+
+        a {
+            margin-top: 5.4rem;  
+        }
     }
 
 `;
