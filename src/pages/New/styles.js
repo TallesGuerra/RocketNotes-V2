@@ -26,12 +26,13 @@ export const Container = styled.div`
     padding: 0 1.5rem;   
     
         
-         h1{       
+         h1{
+            margin: 0.5rem;
            font-size: 1.5rem;
         }
 
        h2{
-        margin: 1.5rem 0;
+        margin: 1.5rem 0.5rem;
         
             font-size: 1.5rem;
         }
