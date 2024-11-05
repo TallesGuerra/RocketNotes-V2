@@ -12,7 +12,7 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.GRAY_300};    
 
     border: ${({ theme, isNew }) =>
-        isNew ? `1px dashed ${theme.COLORS.GRAY_300} ` : "none"  
+        isNew ? `1px dashed ${theme.COLORS.GRAY_300} ` : "none"
     };
 
     margin-bottom: 0.8rem;
@@ -44,8 +44,15 @@ export const Container = styled.div`
 
         &::placeholder{
             color: ${({ theme }) => theme.COLORS.GRAY_300};  
-        }
+        }       
     }
+
+    @media(max-width:660px) {
+           > input{
+            font-size: 1.3rem;
+            padding: 1rem;            
+            }
+        }
 
 
 `;

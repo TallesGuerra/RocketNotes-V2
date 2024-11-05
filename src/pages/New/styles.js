@@ -23,13 +23,26 @@ export const Container = styled.div`
     }
   
     @media(max-width:660px) {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
+    padding: 0 1.5rem;   
+    
+        
+         h1{       
+           font-size: 1.5rem;
+        }
+
+       h2{
+        margin: 1.5rem 0;
+        
+            font-size: 1.5rem;
+        }
+      
+        button{
+            margin-top: 0;
+        }
      
     
         > header{
-            padding: 0.5rem;
+            padding: 0rem;
         
             div span,
             div strong
@@ -42,6 +55,7 @@ export const Container = styled.div`
 
             }
             
+
             
            
         }

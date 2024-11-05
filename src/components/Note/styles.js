@@ -24,13 +24,13 @@ export const Container = styled.button`
     > footer{
         width: 100%;
         display: flex;
-        margin-top: 2.4rem;       
-    }    
-
-@media(max-width:660px){
-        h1{
-            font-size: 1.5rem;
-        }
+        margin-top: 2.4rem;      
     }
-
+    
+    @media(max-width:660px){
+      h1{
+        font-size: 1.5rem;
+      }         
+        
+    }
 `
