@@ -47,7 +47,8 @@ export const Form = styled.form`
     }
 
     button{       
-        opacity: 0.8;        
+        opacity: 0.8;  
+        
     }
 
     @media(max-width: 660px){
@@ -77,6 +78,7 @@ export const Avatar = styled.div`
 
     background-color: ${({ theme }) => theme.COLORS.ORANGE};
     border-radius: 50%;
+    
     
     display: flex;
     align-items: center;

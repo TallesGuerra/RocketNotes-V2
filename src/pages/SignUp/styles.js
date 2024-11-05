@@ -55,7 +55,7 @@ export const Form = styled.form`
         padding: 0 2rem;
 
         a {
-            margin-top: 5.4rem;  
+            margin-top: 2.5rem;  
         }
     }
 

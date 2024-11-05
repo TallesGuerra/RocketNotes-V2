@@ -120,7 +120,7 @@ export const NewNote = styled(Link)`
      grid-area: newNote;
      
      background-color: ${({ theme }) => theme.COLORS.ORANGE};
-     background-color: ${({ theme }) => theme.BACKGROUND_900};
+    color: ${({ theme }) => theme.COLORS.WHITE};;
 
      border: none;
 
@@ -134,6 +134,7 @@ export const NewNote = styled(Link)`
 
     @media(max-width:660px){    
         margin-bottom: 4.0rem;  
+
      }
 `;
 
