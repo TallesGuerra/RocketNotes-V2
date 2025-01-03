@@ -31,7 +31,7 @@
 
 <h3 align="center">⭐ Visualização da Nota!</h3>
 <p align="center">
-  <img width="700px" src="./src/assets/home.png.png">
+  <img width="700px" src="./src/assets/home.png">
 </p>
 
 
